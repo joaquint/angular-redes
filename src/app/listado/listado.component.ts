@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from '../modelo/persona';
-import { DataService } from '../data.service';
 import { ReqresService } from '../services/reqres.service';
 
 @Component({
@@ -11,15 +10,11 @@ import { ReqresService } from '../services/reqres.service';
 export class ListadoComponent implements OnInit {
 
   personas: Array<Persona>;
-  dataService: DataService;
-  personas2: Array<Persona>;
 
-  constructor(dataService: DataService, private reqresService: ReqresService) {
-    this.dataService = dataService;
-    this.personas = dataService.getPersonas();
+  constructor(private reqresService: ReqresService) {
     reqresService.getUsers().subscribe((response) => {
-      this.personas2 = JSON.parse(JSON.stringify(response)).data;
-      console.log(this.personas2);
+      this.personas = JSON.parse(JSON.stringify(response)).data;
+      console.log(this.personas);
     });
   }
 

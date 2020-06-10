@@ -1,3 +1,5 @@
 <p>detalle works!</p>
 <p>parámetro recibido: {{id}} </p>
 <p *ngIf="persona"><strong>{{persona.id}} - </strong> {{persona.first_name}} {{persona.last_name}} - {{persona.email}} - <a *ngIf="persona.avatar" href="{{persona.avatar}}">{{persona.avatar}}</a></p>
+
+<button [routerLink]="'/empleados'">Volver</button>
