@@ -16,7 +16,9 @@ export class NuevoComponent implements OnInit {
 
   createUser(values): void {
     console.log(values);
-    this.reqresService.createUser(values.name, values.job);
+    this.reqresService.createUser(values.name, values.job).subscribe(response => {
+      console.log(response);
+    });
   }
 
 }

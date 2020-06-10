@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { FootComponent } from './foot/foot.component';
 import { DetalleComponent } from './detalle/detalle.component';
 import { NuevoComponent } from './nuevo/nuevo.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NuevoComponent } from './nuevo/nuevo.component';
     HeaderComponent,
     FootComponent,
     DetalleComponent,
-    NuevoComponent
+    NuevoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
