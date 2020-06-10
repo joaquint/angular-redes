@@ -21,11 +21,15 @@ export class ReqresService {
     this.http.post('https://reqres.in/api/login', JSON.parse(body)).subscribe(data => { console.log("-------POST-------->" + JSON.stringify(data)) });
   }
 
-  getUsuario(id: string) {
+  createUser(name: string, job: string) {
+    this.http.post('https://reqres.in/api/users', '{ "name": "' + name + '", "job": "' + job + '" }').subscribe(datos => {console.log(datos);})
+  }
+
+  getUser(id: string) {
     return this.http.get('https://reqres.in/api/users/' + id);
   }
 
-  getUsuarios() {
+  getUsers() {
     return this.http.get('https://reqres.in/api/users?page=1');
   }
 

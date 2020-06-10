@@ -17,7 +17,7 @@ export class ListadoComponent implements OnInit {
   constructor(dataService: DataService, reqresService: ReqresService) {
     this.dataService = dataService;
     this.personas = dataService.getPersonas();
-    reqresService.getUsuarios().subscribe((response) => {
+    reqresService.getUsers().subscribe((response) => {
       this.personas2 = JSON.parse(JSON.stringify(response)).data;
       console.log(this.personas2);
     });

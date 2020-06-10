@@ -4,11 +4,4 @@
     <li><a [routerLink]="['/empleados', persona.id]" >{{persona.first_name}} {{persona.last_name}}</a></li>
 </ul>
 
-<form #f="ngForm" (ngSubmit)="addPersona(f.value)">
-    <div>Id:       <input type="text" name="id"         ngModel></div>
-    <div>Email:    <input type="text" name="email"      ngModel></div>
-    <div>Nombre:   <input type="text" name="first_name" ngModel></div>
-    <div>Apellido: <input type="text" name="last_name"  ngModel></div>
-    <div>Avatar:   <input type="text" name="avatar"     ngModel></div>
-    <button type="submit">Crear</button>
-</form>
+<button [routerLink]="'/nuevo'">Nuevo</button>

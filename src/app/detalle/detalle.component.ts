@@ -15,7 +15,7 @@ export class DetalleComponent implements OnInit {
 
   constructor(route: ActivatedRoute, reqresService: ReqresService) {
     this.id = route.snapshot.paramMap.get('id');
-    reqresService.getUsuario(this.id).subscribe((response) => {
+    reqresService.getUser(this.id).subscribe((response) => {
       this.persona = JSON.parse(JSON.stringify(response)).data;
       console.log(this.persona);
     });

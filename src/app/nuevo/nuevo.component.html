@@ -1,0 +1,9 @@
+<p>nuevo works!</p>
+
+<form #f="ngForm" (ngSubmit)="createUser(f.value); f.reset()">
+    <div>Nombre: <input type="text" name="name" ngModel></div>
+    <div>Puesto: <input type="text" name="job"  ngModel></div>
+    <button type="submit">Crear</button>
+</form>
+
+<button [routerLink]="'/empleados'">Volver</button>

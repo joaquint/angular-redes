@@ -11,6 +11,7 @@ import { ListadoComponent } from './listado/listado.component';
 import { HeaderComponent } from './header/header.component';
 import { FootComponent } from './foot/foot.component';
 import { DetalleComponent } from './detalle/detalle.component';
+import { NuevoComponent } from './nuevo/nuevo.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DetalleComponent } from './detalle/detalle.component';
     ListadoComponent,
     HeaderComponent,
     FootComponent,
-    DetalleComponent
+    DetalleComponent,
+    NuevoComponent
   ],
   imports: [
     BrowserModule,
