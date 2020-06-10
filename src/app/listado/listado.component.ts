@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Persona } from '../modelo/persona';
 import { DataService } from '../data.service';
 import { ReqresService } from '../services/reqres.service';
-import { Singleuser } from '../modelo/singleuser';
-import { Listusers } from '../modelo/listusers';
 
 @Component({
   selector: 'app-listado',
