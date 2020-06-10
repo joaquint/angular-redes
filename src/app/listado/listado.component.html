@@ -1,7 +1,7 @@
 <p>listado works!</p>
 
 <ul *ngFor="let persona of personas2">
-    <li><a [routerLink]="['/empleados', persona.id]" >{{persona.first_name}} {{persona.last_name}}</a></li>
+    <li><a [routerLink]="['/empleados', persona.id]" >{{persona.first_name}} {{persona.last_name}}</a> - <button (click)="deleteUser(persona.id)">Eliminar</button></li>
 </ul>
 
 <button [routerLink]="'/nuevo'">Nuevo</button>

@@ -14,7 +14,7 @@ export class ListadoComponent implements OnInit {
   dataService: DataService;
   personas2: Array<Persona>;
 
-  constructor(dataService: DataService, reqresService: ReqresService) {
+  constructor(dataService: DataService, private reqresService: ReqresService) {
     this.dataService = dataService;
     this.personas = dataService.getPersonas();
     reqresService.getUsers().subscribe((response) => {
@@ -27,9 +27,9 @@ export class ListadoComponent implements OnInit {
     console.log("Se ha inicializado el listado");
   }
 
-  addPersona(values): void {
-    console.log(values);
-    this.personas = this.dataService.addPersona(new Persona(values.id, values.email, values.first_name, values.last_name, values.avatar));
+  deleteUser(id: string) {
+    console.log("deleteUser: " + id);
+    this.reqresService.deleteUser(id);
   }
 
 }
