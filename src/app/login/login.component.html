@@ -4,8 +4,22 @@
     <div>Email: <input type="text" name="email" ngModel></div>
     <div>Password: <input type="text" name="password" ngModel></div>
 </form>-->
-<div><input type='text' placeholder="email" [(ngModel)] = "email"/></div>
-<div><input type='text' placeholder="password" [(ngModel)] = "password"/></div>
-<button (click)="login()">Entrar</button>
+<form #loginForm="ngForm" (ngSubmit)="login()">
+    <label>Email</label>
+    <input type="text" name="email" placeholder="email" [(ngModel)] = "email" required #trackEmail="ngModel"/>
+    <p class="alert" *ngIf="!trackEmail.valid && trackEmail.touched">Se requiere el email</p>
+    <br>
+    <label>Password</label>
+    <input type="password" name="password" placeholder="password" [(ngModel)] = "password" required #trackPassword="ngModel"/>
+    <p class="alert" *ngIf="!trackPassword.valid && trackPassword.touched">Se requiere la password</p>
+    <p *ngIf="error">{{error}}</p>
+    <br>
+    <input type="submit" value="Entrar" [disabled]="!loginForm.form.valid"/>
+</form>
 
+<br>
 <button (click)="autofill()">Rellenar</button>
+
+<br><br>
+{{loginForm.value | json}}
+{{loginForm.submitted}}

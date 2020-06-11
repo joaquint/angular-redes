@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
 
   email: string;
   password: string;
+  error: string;
 
   constructor(private reqresService: ReqresService, private router: Router) {
   }
@@ -31,6 +32,7 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/empleados');
       }
     });
+    this.error = "Los datos introducidos no son correctos";
   }
 
 }
