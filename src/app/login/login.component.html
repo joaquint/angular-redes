@@ -1,7 +1,11 @@
 <p>login works!</p>
 
-<form #f="ngForm" (ngSubmit)="login(f.value)">
+<!--<form #f="ngForm" (ngSubmit)="login(f.value)">
     <div>Email: <input type="text" name="email" ngModel></div>
     <div>Password: <input type="text" name="password" ngModel></div>
-    <button type="submit">Entrar</button>
-</form>
+</form>-->
+<div><input type='text' placeholder="email" [(ngModel)] = "email"/></div>
+<div><input type='text' placeholder="password" [(ngModel)] = "password"/></div>
+<button (click)="login()">Entrar</button>
+
+<button (click)="autofill()">Rellenar</button>

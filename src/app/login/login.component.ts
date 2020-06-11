@@ -9,15 +9,22 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  email: string;
+  password: string;
+
   constructor(private reqresService: ReqresService, private router: Router) {
   }
 
   ngOnInit(): void {
   }
 
-  login(values): void {
-    console.log(values);
-    this.reqresService.login(values.email, values.password).subscribe(response => {
+  autofill() {
+    this.email = "eve.holt@reqres.in";
+    this.password = "cityslicka";
+  }
+
+  login() {
+    this.reqresService.login(this.email, this.password).subscribe(response => {
       let token: String = JSON.parse(JSON.stringify(response)).token;
       console.log(token);
       if (token) {
