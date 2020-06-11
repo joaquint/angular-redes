@@ -1,24 +1,27 @@
-<p>login works!</p>
-
-<!--<form #f="ngForm" (ngSubmit)="login(f.value)">
-    <div>Email: <input type="text" name="email" ngModel></div>
-    <div>Password: <input type="text" name="password" ngModel></div>
-</form>-->
 <form #loginForm="ngForm" (ngSubmit)="login()">
-    <label>Email</label>
-    <input type="text" name="email" placeholder="email" [(ngModel)] = "email" required #trackEmail="ngModel"/>
-    <p class="alert" *ngIf="!trackEmail.valid && trackEmail.touched">Se requiere el email</p>
-    <br>
-    <label>Password</label>
-    <input type="password" name="password" placeholder="password" [(ngModel)] = "password" required #trackPassword="ngModel"/>
-    <p class="alert" *ngIf="!trackPassword.valid && trackPassword.touched">Se requiere la password</p>
-    <p *ngIf="error">{{error}}</p>
-    <br>
-    <input type="submit" value="Entrar" [disabled]="!loginForm.form.valid"/>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" placeholder="email" [(ngModel)]="email" required
+            #trackEmail="ngModel" />
+        <small *ngIf="!trackEmail.valid && trackEmail.touched" class="form-text text-muted">Se requiere el email</small>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" placeholder="password" [(ngModel)]="password"
+            required #trackPassword="ngModel" />
+        <small *ngIf="!trackPassword.valid && trackPassword.touched" class="form-text text-muted">Se requiere la
+            password</small>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.form.valid">Entrar</button>
 </form>
-
+<!--
 <br>
-<button (click)="autofill()">Rellenar</button>
+<div *ngIf="error" class="alert alert-danger" role="alert">
+    <strong>{{error}}</strong>
+</div>
+-->
+<br>
+<button class="btn btn-secondary" (click)="autofill()">Rellenar</button>
 
 <br><br>
 {{loginForm.value | json}}
